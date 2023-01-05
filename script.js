@@ -6592,8 +6592,14 @@ function getRandomColor() {
   const randomColor = colors[
     Math.floor(Math.random() * colors.length)
   ];
-
+  
   // Your code below
+  
+  
+  document.body.style.backgroundColor = randomColor;
+  document.getElementById("new-quote").style.backgroundColor = randomColor;
+  document.getElementById("text").style.color = randomColor ;
+  document.getElementById("author").style.color = randomColor ;
 
   // Your code above
 }
@@ -6602,12 +6608,19 @@ function getRandomQuote() {
   const randomQuote = quotesData[
     Math.floor(Math.random() * quotesData.length)
   ];
-
+  
   // Your code below
-
+  document.getElementById("text").textContent = randomQuote.text;
+  document.getElementById("author").textContent = randomQuote.author;
   // Your code above
 }
 
 // Your code below
 
+const btn = document.getElementById("new-quote")
+console.log(btn)
+btn.addEventListener("click", getRandomColor)
+btn.addEventListener("click", getRandomQuote)
+
+console.log("bonjour")
 // Your code above
